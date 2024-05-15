@@ -8,5 +8,7 @@ func RoutePerson(mux *http.ServeMux, storage Storage) {
 	p := newPerson(storage)
 
 	mux.HandleFunc("/v1/person/create", p.create)
+	mux.HandleFunc("/v1/person/getAll", p.getAll)
+	mux.HandleFunc("/v1/person/update", p.update)
 
 }
